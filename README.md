@@ -40,4 +40,32 @@ meta.json的内容，当前版本为空文件。
         |- meta.json
 ```
 
+# 同步到远程
 
+## 七牛云
+
+使用以下命令进行工具授权。
+
+```
+tools\qshell.exe account AK SK name
+```
+
+其中AK和SK从七牛云的个人中心>密钥管理中获取，name是当前账号的备注名。
+
+在.qiniu文件夹下创建config.json文件，内容如下
+
+```json
+{
+	"src_dir": "D:/UltraDesk-Repository/volume", 
+	"bucket": "ultradesk-repository",
+	"overwrite": true,
+	"check_exists": true,
+	"check_hash": true, 
+	"rescan_local": true
+}
+```
+
+src_dir填写volume的绝对路径，bucket填写七牛云中对应的存储桶。
+配置文件的说明在 https://github.com/qiniu/qshell/blob/master/docs/qupload.md 。
+
+运行SyncToQiniu.bat开始同步。
