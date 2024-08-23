@@ -81,12 +81,10 @@ def generateApplication(_volume_root, _os):
         json.dump(manifest, f, ensure_ascii=False)
 
 
-@app.route("/<filename>")
-def download(filename):
-    log.info("download {}/{}".format(volume_root, filename))
-    return send_from_directory(
-        volume_root, filename, mimetype="application/octet-stream"
-    )
+@app.route("/<path:p>")
+def download(p):
+    log.info("download {}/{}".format(volume_root, p))
+    return send_from_directory(volume_root, p, mimetype="application/octet-stream")
 
 
 """

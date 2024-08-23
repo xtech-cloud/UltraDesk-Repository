@@ -1,11 +1,19 @@
-# 启动
-## python依赖包
-colorlog
-flask
-## 本机
-python run.py
+# 快速开始
 
-# volume结构
+运行link.bat建立Repository目录的软链接
+
+安装以下python依赖包
+ - colorlog
+ - flask
+
+运行以下脚本
+```python
+python run.py
+```
+
+访问 http://localhost/source_windows.json 获取源
+
+# volume文件结构说明
 ```
 |- volume
   |- applications
@@ -31,4 +39,5 @@ meta.json的内容，当前版本为空文件。
         |- Chrome_120.0.6099.130.7z
         |- meta.json
 ```
-启动服务后，会自动生成volume/source_windows.json
+
+
